@@ -53,3 +53,16 @@ UPDATE
     properties
 SET
     atomic_mass = CAST(atomic_mass AS FLOAT);
+
+DELETE FROM
+    properties
+WHERE
+    atomic_number = 1000;
+
+DELETE FROM
+    elements
+WHERE
+    atomic_number = 1000;
+
+ALTER TABLE
+    properties DROP COLUMN type;
