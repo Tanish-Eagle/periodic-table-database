@@ -38,3 +38,18 @@ ALTER TABLE
     properties
 ADD
     FOREIGN KEY(atomic_number) REFERENCES elements(atomic_number);
+
+UPDATE
+    elements
+SET
+    symbol = INITCAP(symbol);
+
+ALTER TABLE
+    properties
+ALTER COLUMN
+    atomic_mass type VARCHAR(9);
+
+UPDATE
+    properties
+SET
+    atomic_mass = CAST(atomic_mass AS FLOAT);
